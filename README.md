@@ -1,4 +1,4 @@
-Même Couleur
+# Même Couleur
 
 Use the mouse to see which disks will be removed; the disks
 will be highlighted. Click to remove them. More disks give
@@ -10,7 +10,7 @@ Scoring: 3 disks give 1 point; 4 give 4;
          5 give 9; 6 give 16; 7 give 25;
          etc.
 
--------
+# En français
 
 Même Couleur
 
@@ -25,17 +25,19 @@ donne 0, trois donne 1, quatre donne 4, cinq donne 9, six donne
 
 La formule pour calculer les points est (n-2)^2.
 
-Screenshots
+# Details
+
+Made with Löve2D
+![Löve2D logo](https://github.com/ratel223/meme-couleur/blob/main/Love-logo-0.10.png "Löve2D logo")
+
+The game structure comes from Alexander Griffith's min-love2d-fennel
+https://gitlab.com/alexjgriffith/min-love2d-fennel
+This, in turn, is based on technomancy's Lisp Game Jam winner
+EXO_encounter 667.
+# Screenshots
 
 ![Game Intro](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_intro.png "Intro")
 ![Help screen](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_help.png "Help")
 ![Filled, ready to play](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_fill.png "Filled")
 ![Playing game](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_play.png "Playing")
 ![Playing, many red disks selected](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_many_red_disks.png "many red disks")
-
--------
-
-The game structure comes from Alexander Griffith's min-love2d-fennel
-https://gitlab.com/alexjgriffith/min-love2d-fennel
-This, in turn, is based on technomancy's Lisp Game Jam winner
-EXO_encounter 667.
