@@ -28,7 +28,7 @@ La formule pour calculer les points est (n-2)^2.
 # Details
 
 Made with Löve2D
-![Löve2D logo](https://github.com/ratel223/meme-couleur/blob/main/Love-logo-0.10.png "Löve2D logo")
+![Löve2D logo](https://github.com/ratel223/meme-couleur/blob/main/Love-game-logo-0.10.png "Löve2D logo")
 
 The game structure comes from Alexander Griffith's min-love2d-fennel
 https://gitlab.com/alexjgriffith/min-love2d-fennel
