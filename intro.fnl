@@ -27,7 +27,7 @@
 ;
 (local (major minor revision) (love.getVersion))
 (var title "Même Couleur")
-(var message ["Élimine des groupes de disques"
+(var message ["Enlève des groupes de disques"
               "qui ont la même couleur."
               "Le jeu va commencer bientôt."
               " "
