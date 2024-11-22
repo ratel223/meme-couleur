@@ -27,13 +27,24 @@ La formule pour calculer les points est (n-2)^2.
 
 # Details
 
-Made with Löve2D
 ![Löve2D logo](https://github.com/ratel223/meme-couleur/blob/main/Love-game-icon-0.10.png "Löve2D logo")
 
+Made with Löve2D and Fennel
+
+Fennel is a programming language that brings together the
+simplicity, speed, and reach of Lua with the flexibility of
+a lisp syntax and macro system.
+
+Lua is flexible enough to read the Fennel code and compile it
+dynamically.
+
 The game structure comes from Alexander Griffith's min-love2d-fennel
-https://gitlab.com/alexjgriffith/min-love2d-fennel
 This, in turn, is based on technomancy's Lisp Game Jam winner
 EXO_encounter 667.
+
+https://gitlab.com/alexjgriffith/min-love2d-fennel
+https://love2d.org/forums/viewtopic.php?t=85189
+
 # Screenshots
 
 ![Game Intro](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_intro.png "Intro")
