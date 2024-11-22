@@ -1,4 +1,4 @@
-Maximiser - enlever les disques qui ont la même couleur
+Même Couleur - enlever les disques qui ont la même couleur
 Copyright (C) 2024  Claude Marinier
 
 This program is free software: you can redistribute it and/or
