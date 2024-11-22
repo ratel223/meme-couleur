@@ -25,6 +25,14 @@ donne 0, trois donne 1, quatre donne 4, cinq donne 9, six donne
 
 La formule pour calculer les points est (n-2)^2.
 
+Screenshots
+
+![Game Intro](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_intro.png "Intro")
+![Help screen](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_help.png "Help")
+![Filled, ready to play](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_fill.png "Filled")
+![Playing game](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_play.png "Playing")
+![Playing, many red disks selected](https://github.com/ratel223/meme-couleur/blob/main/screenshots/M%C3%AAme_Couleur_many_red_disks.png "many red disks")
+
 -------
 
 The game structure comes from Alexander Griffith's min-love2d-fennel
