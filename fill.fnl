@@ -212,6 +212,7 @@
   ;;  2) create one disk at a time and let it fall,
   ;;     must be done in update on a timer so each
   ;;     disk has time to fall
+  ;; Using option #1 for now.
 
   (local disk-radius 25)  ;; use diameter for calculating screen size
   (local disk-density 1)
@@ -219,7 +220,7 @@
   ; make new disks with random colours
   ;
   ; make arithmetic easier: count rows and columns from zero
-  ; test with only 14 rows and 19 columns
+  ; create 10 rows and 14 columns plus an extra row of 13 on top
   ;
 
   (var start-x (+ left.width 10 disk-radius))
@@ -331,6 +332,9 @@
 
   (when (or (= key "q") (= key "Q"))
     (love.event.quit))
+
+  (when (or (= key "h") (= key "H"))
+    (set-mode :help))
 
   (when (or (= key "p") (= key "P"))
     ; tilt the world left before playing
