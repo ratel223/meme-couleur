@@ -250,7 +250,7 @@
   (when (and (<= cool-down 0)
              (= phase PLAY)
              (love.keyboard.isDown "space"))
-    (set cool-down 0.5)  ; 1/2 a second to void "key bounce"
+    (set cool-down 0.5)  ; 1/2 a second to avoid "key bounce"
     (each [_ disk (pairs disks)]
       (: disk.body :applyLinearImpulse 0 20)))
   
@@ -359,7 +359,7 @@
   ; high-score list
   ;
   (when (and (<= cool-down 0)
-              (= phase DONE))
+             (= phase DONE))
     (var set-mode _G.sm)
     (set-mode :high-score))
 
@@ -381,12 +381,16 @@
     ; forward keypresses to SUIT
     (: suit :keypressed key))
 
-  (when (and (= phase DONE)
-             (= key "space"))
-    (var set-mode _G.sm)
-    (set-mode :high-score))
+  ; I am not sure this is needed, since it is done
+  ; automatically after the player's name is provided
+  ;
+; (when (and (= phase DONE)
+;            (= key "space"))
+;   (var set-mode _G.sm)
+;   (set-mode :high-score))
 
-  (when (= key "q")
+  (when (and (= key "q")
+             (= key "Q"))
     (love.event.quit)))
 
 
