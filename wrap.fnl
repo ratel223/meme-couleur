@@ -55,7 +55,7 @@
    :scale 1
    :world nil
    :box {}
-   :version "1.0" })
+   :version "1.1" })
 (set _G.gs game-state)
 
 
