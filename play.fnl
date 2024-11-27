@@ -414,7 +414,8 @@
 ;         (: disk.fixture :destroy)
 ;         (: disk.shape :destroy)  ; some say there is no point
           (tset disks id nil)))
-      (incf score (square (- num-bright 2)))))) ; scoring is (n-2)^2
+      ; increase the score faster, it was (n-2)^2
+      (incf score (square (- num-bright 1)))))) ; scoring is (n-1)^2
 
 {:activate activate
  :draw draw
