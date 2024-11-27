@@ -57,6 +57,10 @@
 (fn activate []
   (var game-state _G.gs)
 
+  ; reset the delay time
+  ;
+  (set time 0)
+
   ; Löve2d directory where I save the high-score file
   ; reading and writing files defaults to this directory.
   ;   Linux:   ~/.local/share/love/
