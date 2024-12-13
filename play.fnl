@@ -71,12 +71,25 @@
 
 ; cool-down for ball impulse
 ;
-;   will bet set after an impulse and count-down to zero
+;   will be set after an impulse and count-down to zero
 ;
 (var cool-down 0)
 
+; pause after high score recorded
+;
+(var delay 0)
+
+; some math functions
+;
 (fn square [n]
   (* n n))
+(fn v-length [x y]
+  ; try without the square root
+  (+ (square x) (square y)))
+
+; velocity below this is considered stopped
+;
+(local velocity-threshold 0.01)  ; metres/second
 
 
 ;; Löve2D function - a c t i v a t e
@@ -102,11 +115,6 @@
   (set score-str "    0")
   (set disks-tagged 0)
   (set disks-tagged-str "  0")
-
-  ; allow disks to settle from their initial fall
-  ; (they start higher and separated)
-  ;
-  (set cool-down 3)
 
   ; The second time I play, submitted is already set before
   ; I get a chance to input anything; I do not even see the
@@ -237,13 +245,15 @@
   ;
   (var input-state {})
 
-  ; count-down the timer
+  ; count-down the timers
   ;
   (when (> cool-down 0)
     (decf cool-down dt))
+  (when (> delay 0)
+    (decf delay dt))
 
   ; shake-up the ballswith an impulse,
-  ; enforce a delay between uses
+  ; enforce a pause between uses
   ;
   ; don't test floating point numbers for equality with zero
   ;
@@ -287,10 +297,17 @@
       (incf num-bright)))
   (set disks-tagged num-bright)
   
+  ; let disks come to rest before checking if the game is over
+  ;
+  (var moving false)
+  (each [id disk (pairs disks) &until moving]
+    (when (> (v-length (: disk.body :getLinearVelocity)) velocity-threshold)
+      (set moving true)))
+
   ; the game is over when there are no disks touching
   ; a disk of the same colour
   ;
-  (when (and (<= cool-down 0)  ; look-out for floating-point checks
+  (when (and (not moving)
              (= phase PLAY))
     (var game-over true)  ; reset on first touching same colour
     (each [id disk (pairs disks) &until (not game-over)]
@@ -353,12 +370,12 @@
       (table.remove high-score 11))
     (love.filesystem.write "high-score.json" (json.encode high-score))
     (set phase DONE)
-    (set cool-down 2))  ; seconds
+    (set delay 2))  ; seconds
 
   ; after getting the player's name, go display the
   ; high-score list
   ;
-  (when (and (<= cool-down 0)
+  (when (and (<= delay 0)
              (= phase DONE))
     (var set-mode _G.sm)
     (set-mode :high-score))
@@ -402,7 +419,7 @@
 
 
   (when (= 1 button)
-    (set cool-down 4)  ; seconds, allow remaining disks to settle
+    (set delay 4)  ; seconds, allow remaining disks to settle
     (var num-bright 0)
     (each [_ disk (pairs disks)]
       (when disk.bright
