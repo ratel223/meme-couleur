@@ -29,6 +29,12 @@ donne 0, trois donne 1, quatre donne 4, cinq donne 9, six donne
 
 La formule pour calculer les points est (n-2)^2.
 
+## Hint
+
+Tapping the space bar will shake the box holding the disks. This
+forces the disks to move. They may not move much or they may get
+into a better configuration (allowing more disks to be removed).
+
 ## Installation
 
 ![Löve2D logo](https://github.com/ratel223/meme-couleur/blob/main/Love-game-icon-0.10.png "Löve2D logo")
